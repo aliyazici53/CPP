@@ -1,5 +1,5 @@
-#ifndef __MYAWESOMEPHONEBOOK_H__
-#define __MYAWESOMEPHONEBOOK_H__
+#ifndef __PhoneBook_H__
+#define __PhoneBook_H__
 
 #include <iostream>
 #include <iomanip>
@@ -7,9 +7,9 @@
 #include "Contact.h"
 #include "ContactConsole.h"
 
-class MyAwesomePhoneBook {
+class PhoneBook {
 public:
-    MyAwesomePhoneBook();
+    PhoneBook();
 
     void	addContact();
     void	searchContact();

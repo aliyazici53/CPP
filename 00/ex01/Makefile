@@ -2,7 +2,7 @@ NAME=contact
 CC=c++
 CPPFLAGS=-Wall -Wextra -Werror
 
-SRCS = Contact.cpp ContactConsole.cpp MyAwesomePhoneBook.cpp main.cpp
+SRCS = Contact.cpp ContactConsole.cpp PhoneBook.cpp main.cpp
 
 all: $(NAME)
 

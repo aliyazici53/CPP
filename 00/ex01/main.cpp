@@ -1,8 +1,8 @@
-#include "MyAwesomePhoneBook.h"
+#include "PhoneBook.h"
 
 int main() {
 	bool isRunning = true;
-	MyAwesomePhoneBook myAwesomePhoneBook;
+	PhoneBook PhoneBook;
 	std::string input;
 
 	std::cout << "-*- Phonebook -*-" << std::endl;
@@ -11,11 +11,11 @@ int main() {
 		std::cout << "# Enter your command [ADD, SEARCH, EXIT]:" << std::endl << ">";
 		std::getline(std::cin, input);
 		if(input == "ADD") {
-			myAwesomePhoneBook.addContact();
+			PhoneBook.addContact();
 			std::cout << "Contact has been added!" << std::endl;
 		}
 		else if(input == "SEARCH")
-			myAwesomePhoneBook.searchContact();
+			PhoneBook.searchContact();
 		else if(input == "EXIT") {
 			std::cout << "Exiting... " << std::endl;
 			isRunning = false;

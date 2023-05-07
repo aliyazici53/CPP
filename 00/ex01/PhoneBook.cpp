@@ -1,11 +1,11 @@
-#include "MyAwesomePhoneBook.h"
+#include "PhoneBook.h"
 
 
-MyAwesomePhoneBook::MyAwesomePhoneBook() {
+PhoneBook::PhoneBook() {
 	contacts = new Contact[8];
 }
 
-void MyAwesomePhoneBook::addContact() {
+void PhoneBook::addContact() {
 	Contact newContact;
 	showPrompts(Contact::FirstName, newContact);
 	showPrompts(Contact::LastName, newContact);
@@ -16,7 +16,7 @@ void MyAwesomePhoneBook::addContact() {
 	++size;
 }
 
-void MyAwesomePhoneBook::showPrompts(int index, Contact &contact) {
+void PhoneBook::showPrompts(int index, Contact &contact) {
 	std::cout << Contact::fields[index] << std::endl << ">>> ";
 	getline(std::cin, contact.infos[index]);
 	if (contact.infos[index] == "") {
@@ -24,7 +24,7 @@ void MyAwesomePhoneBook::showPrompts(int index, Contact &contact) {
 	}
 }
 
-void MyAwesomePhoneBook::putTable() const {
+void PhoneBook::putTable() const {
 	std::cout << "|------------------------------------------|" << std::endl;
 	std::cout << "|   Index|First Name| Last Name|  Nickname |" << std::endl;
 	std::cout << "|------------------------------------------|" << std::endl;
@@ -41,7 +41,7 @@ void MyAwesomePhoneBook::putTable() const {
 	}
 }
 
-void MyAwesomePhoneBook::searchContact() {
+void PhoneBook::searchContact() {
 	if(isEmptyPhonebook()) {
 		std::cout << "Phonebook is empty. Can't search" << std::endl;
 		return;
@@ -62,17 +62,17 @@ void MyAwesomePhoneBook::searchContact() {
 	std::cin.ignore(1000, '\n');
 }
 
-bool MyAwesomePhoneBook::isEmptyPhonebook() const {
+bool PhoneBook::isEmptyPhonebook() const {
 	return size == 0;
 }
 
-std::string MyAwesomePhoneBook::checkOutput(const std::string &str) const {
+std::string PhoneBook::checkOutput(const std::string &str) const {
 	if(str.length() > 10)
 		return str.substr(0, 9).append(".");
 	return str;
 }
 
-void MyAwesomePhoneBook::putTableColumns(const ContactConsole &contactConsole, std::size_t i) const {
+void PhoneBook::putTableColumns(const ContactConsole &contactConsole, std::size_t i) const {
 	std::cout << std::setw(10) << i + 1 << '|';
 	std::cout << std::setw(10) << std::right << contactConsole.getFirstName() << '|';
 	std::cout << std::setw(10) << std::right << contactConsole.getLastName() << '|';
