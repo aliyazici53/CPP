@@ -1,5 +1,5 @@
 NAME=contact
-CC=clang++
+CC=c++
 CFLAGS=-Wall -Wextra -Werror
 
 SRCS = Contact.cpp ContactConsole.cpp MyAwesomePhoneBook.cpp main.cpp
