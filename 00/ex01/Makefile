@@ -1,13 +1,13 @@
 NAME=contact
 CC=c++
-CFLAGS=-Wall -Wextra -Werror
+CPPFLAGS=-Wall -Wextra -Werror
 
 SRCS = Contact.cpp ContactConsole.cpp MyAwesomePhoneBook.cpp main.cpp
 
 all: $(NAME)
 
 $(NAME): $(SRCS)
-	@ $(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+	@ $(CC) $(CPPFLAGS) $(SRCS) -o $(NAME)
 
 run:
 	./$(NAME)

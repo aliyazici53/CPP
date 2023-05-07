@@ -8,7 +8,6 @@ int main() {
 	std::cout << "-*- Phonebook -*-" << std::endl;
 
 	while(isRunning) {
-
 		std::cout << "# Enter your command [ADD, SEARCH, EXIT]:" << std::endl << ">";
 		std::getline(std::cin, input);
 		if(input == "ADD") {

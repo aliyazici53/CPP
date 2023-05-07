@@ -9,9 +9,7 @@
 
 class MyAwesomePhoneBook {
 public:
-    MyAwesomePhoneBook() {
-        contacts = new Contact[8];
-    }
+    MyAwesomePhoneBook();
 
     void	addContact();
     void	searchContact();

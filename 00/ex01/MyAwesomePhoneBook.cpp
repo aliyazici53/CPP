@@ -1,5 +1,10 @@
 #include "MyAwesomePhoneBook.h"
 
+
+MyAwesomePhoneBook::MyAwesomePhoneBook() {
+	contacts = new Contact[8];
+}
+
 void MyAwesomePhoneBook::addContact() {
 	Contact newContact;
 	showPrompts(Contact::FirstName, newContact);
@@ -7,8 +12,6 @@ void MyAwesomePhoneBook::addContact() {
 	showPrompts(Contact::Nickname, newContact);
 	showPrompts(Contact::Phone, newContact);
 	showPrompts(Contact::Secret, newContact);
-//	std::cout << size + 1 << std::endl;
-//	std::cout << (size + 1) % 8 << std::endl;
 	contacts[size % 8] = newContact;
 	++size;
 }
@@ -16,6 +19,9 @@ void MyAwesomePhoneBook::addContact() {
 void MyAwesomePhoneBook::showPrompts(int index, Contact &contact) {
 	std::cout << Contact::fields[index] << std::endl << ">>> ";
 	getline(std::cin, contact.infos[index]);
+	if (contact.infos[index] == "") {
+		showPrompts(index, contact);
+	}
 }
 
 void MyAwesomePhoneBook::putTable() const {
